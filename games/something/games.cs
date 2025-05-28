@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace games.something
 {
-    public class game
+    public class Game
     {
         public string console_name { get; set; }
         public int console_id { get; set; }
 
 
-        public game(int consoleId, string consoleName)
+        public Game(int consoleId, string consoleName)
         {
 
             console_id = consoleId;

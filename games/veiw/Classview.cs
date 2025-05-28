@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using gamese.repo;
 using games.something;
 
+//consoleR = console row
+
 namespace games.veiw
 {
     internal class Classview
@@ -24,11 +26,11 @@ namespace games.veiw
 
         }
 
-        public void displayconsole(List<game> consoleTR)
+        public void displayconsole(List<Game> consoleRL)
         {
-            foreach (game consoleT in consoleTR)
+            foreach (Game consoleR in consoleRL)
             {
-                Console.WriteLine($"{consoleT.console_id},{consoleT.console_name}");
+                Console.WriteLine($"{consoleR.console_id},{consoleR.console_name}");
 
             }
 
