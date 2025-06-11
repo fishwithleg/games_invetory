@@ -17,9 +17,11 @@ namespace games.veiw
             Console.WriteLine("welcome to console inventory");
             Console.WriteLine("meun: ");
             Console.WriteLine("1. view all reconds in console");
-            Console.WriteLine("2. update consoles name by console_id");
+            Console.WriteLine("2. update consoles name");
             Console.WriteLine("3. insert new console");
-            Console.WriteLine("4. delete console by console_name");
+            Console.WriteLine("4. delete console");
+            Console.WriteLine("5. next");
+            Console.WriteLine("6. exit");
             Console.WriteLine("select the opition");
 
             return Console.ReadLine();

@@ -13,7 +13,7 @@ namespace games
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Hello there");
             string connectionstring = "Data Source=(localdb)\\ProjectModels;Initial Catalog=colonse;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             storemanager = new StoreManager(connectionstring);
@@ -43,9 +43,14 @@ namespace games
                 case "2":
                     updateconsole();
 
-
                     break;
                 case "5":
+                    displaygamemenu();
+                    Console.Clear();
+
+
+                    break;
+                case "6":
                     //exit = true;
                     break;
 
@@ -102,13 +107,31 @@ namespace games
 
 
 
+        public static string displaygamemenu()
+        {
+            Console.WriteLine("welcome to game inventory");
+            Console.WriteLine("meun: ");
+            Console.WriteLine("1. view all reconds in games");
+            Console.WriteLine("2. update games name");
+            Console.WriteLine("3. insert new games");
+            Console.WriteLine("4. delete games");
+            Console.WriteLine("5. next");
+            Console.WriteLine("6. exit");
+            Console.WriteLine("select the opition");
 
+            return Console.ReadLine();
+
+        }
 
 
 
 
     }
  }
+
+
+        
+
 
 //List<gamese> consoleTR = storeragmanger.GetBrands();
 //foreach (gamese conbose in consoleTR)
