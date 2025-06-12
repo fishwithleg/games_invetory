@@ -25,6 +25,7 @@ namespace games.veiw
             Console.WriteLine("select the opition");
 
             return Console.ReadLine();
+            
 
         }
 

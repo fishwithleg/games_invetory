@@ -28,12 +28,14 @@ namespace games
 
                         List<Game> consoleRL = storemanager.GetEveryconsole();
                         view.displayconsole(consoleRL);
+                        Console.Clear();
 
                     }
 
                     break;
                 case "4":
                     deleteconsole();
+                   
 
                     break;
                 case "3":
@@ -42,11 +44,11 @@ namespace games
                     break;
                 case "2":
                     updateconsole();
-
+                    
                     break;
                 case "5":
-                    displaygamemenu();
-                    Console.Clear();
+                    //displaygamemenu();
+                    
 
 
                     break;
@@ -107,26 +109,14 @@ namespace games
 
 
 
-        public static string displaygamemenu()
-        {
-            Console.WriteLine("welcome to game inventory");
-            Console.WriteLine("meun: ");
-            Console.WriteLine("1. view all reconds in games");
-            Console.WriteLine("2. update games name");
-            Console.WriteLine("3. insert new games");
-            Console.WriteLine("4. delete games");
-            Console.WriteLine("5. next");
-            Console.WriteLine("6. exit");
-            Console.WriteLine("select the opition");
-
-            return Console.ReadLine();
-
-        }
+        
 
 
 
 
     }
+
+    
  }
 
 
