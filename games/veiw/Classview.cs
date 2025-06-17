@@ -27,7 +27,43 @@ namespace games.veiw
             return Console.ReadLine();
             
 
+            
         }
+
+        public string DisplayGameMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("games inventory");
+            Console.WriteLine("meun: ");
+                Console.WriteLine("1. view all reconds in games");
+                Console.WriteLine("2. update games name");
+                Console.WriteLine("3. insert new games");
+                Console.WriteLine("4. delete games");
+                Console.WriteLine("5. next");
+                Console.WriteLine("6. back");
+            Console.WriteLine("select the opition");
+
+            return Console.ReadLine();
+        }
+
+        public string DisplayAccsseorey()
+        {
+            Console.Clear();
+            Console.WriteLine("games inventory");
+            Console.WriteLine("meun: ");
+            Console.WriteLine("1. view all reconds in games");
+            Console.WriteLine("2. update games name");
+            Console.WriteLine("3. insert new games");
+            Console.WriteLine("4. delete games");
+            Console.WriteLine("5. next");
+            Console.WriteLine("6. back");
+            Console.WriteLine("select the opition");
+
+            return Console.ReadLine();
+        }
+
+
+
 
         public void displayconsole(List<Game> consoleRL)
         {
@@ -43,6 +79,7 @@ namespace games.veiw
         public string getinput()
         {
             return Console.ReadLine();
+            Console.Clear();
 
 
 

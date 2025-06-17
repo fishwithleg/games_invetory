@@ -74,7 +74,30 @@ namespace gamese.repo
             return consoleRL; 
         }
 
-          public int updateconsole(int consoleId, string consoleName)
+
+        //public List<GameConsole> GetEveryGames()
+        //{
+        //    List<GameConsole> GameIL = new List<GameConsole>();
+        //    string sqlstrings = "select * from product.console";
+        //    using (SqlCommand cmd = new SqlCommand(sqlstrings, conn))
+
+        //    {
+        //        using (SqlDataReader reader = cmd.ExecuteReader())
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                int consoleid = Convert.ToInt32(reader["console_id"]);
+        //                string consolename = reader["console_name"].ToString();
+        //                GameIL.Add(new GameConsole(ingamesid, consolename));
+        //            }
+        //        }
+
+        //    }
+
+        //    return GameIL;
+        //}
+
+        public int updateconsole(int consoleId, string consoleName)
         { 
            using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name) values (console_id); select scope_identity();", conn))
             {

@@ -47,7 +47,41 @@ namespace games
                     
                     break;
                 case "5":
-                    //displaygamemenu();
+                    {
+
+                        string choices = view.DisplayGameMenu();
+                        switch (choices)
+                        
+                        {
+
+                          
+
+                            //    case "1":
+                            //        {
+
+                            //            List<Game> consoleRL = storemanager.GetEveryGames();
+                            //            view.display(GameIL);
+                            //            Console.Clear();
+
+                            //        }
+
+                            //        break;
+                            //    case "4":
+                            //        ();
+
+
+                            //        break;
+                            //    case "3":
+                            //        ();
+
+                            //        break;
+                            //    case "2":
+                            //        ();
+
+
+                        }
+                    }
+                    
                     
 
 
@@ -65,6 +99,8 @@ namespace games
 
             }
             storemanager.closeconncetion();
+
+
         }
 
 
