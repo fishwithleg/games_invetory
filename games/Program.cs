@@ -22,18 +22,20 @@ namespace games
             do
             { 
               choice = view.displaymenu();
+                Console.Clear();
 
-            
 
-            
-            switch (choice)
+
+
+                switch (choice)
             {
                 case "1":
                     {
-
+                            Console.WriteLine("[heres the list]");
+                            Console.WriteLine("--------------");
                         List<Game> consoleRL = storemanager.GetEveryconsole();
                         view.displayconsole(consoleRL);
-
+                            Console.WriteLine("--------------");
                         
 
                     }
@@ -53,23 +55,25 @@ namespace games
 
                         break;
                     case "6":
-                        Console.Clear();
-
+                        view.displaymenu();
 
                    break;   
                 case "5":
+                        
+                        Console.Clear();
                         {
-
-                            string choice2 = view.DisplayGameMenu();
+                            string choice2;
+                            choice2 = view.DisplayGameMenu();
                             switch (choice2)
+
 
                             {
                                 case "1":
                                     {
 
-                                        List<Game> GameIL = storemanager.GetEveryconsole();
-                                        view.displayconsole(GameIL);
-                                        Console.Clear();
+                                        //List<Game> GameIL = storemanager.GetEveryGame();
+                                        //view.displaygames(GameIL);
+                                        
 
                                     }
 
@@ -88,11 +92,13 @@ namespace games
 
                                     break;
                                     case "6":
-                                    choice = view.displaymenu();
+                                    Console.Clear();
+                                    choice2.Equals(choice);
 
 
                                     break;
                                 case "5":
+                                    Console.Clear();
                                     {
 
                                         string choice3 = view.DisplayAccsseorey();
@@ -122,7 +128,8 @@ namespace games
 
                                                 break;
                                             case "5":
-                                                choice2 = view.DisplayGameMenu();
+                                                Console.Clear();
+                                                choice2.Equals("5");
 
                                                 break;
                                         }
@@ -138,10 +145,12 @@ namespace games
 
 
                     break;
-                case "7":
-                    //exit = true;
-                    storemanager.closeconncetion();
-                    break;
+                case "loop":
+                        
+                        //exit = true;
+                        storemanager.closeconncetion();
+                        
+                        break;
 
 
                     
@@ -151,7 +160,7 @@ namespace games
    
 
              }
-            } while (!choice.Equals("7"));
+            } while (!choice.Equals("loop"));
 
 
         }

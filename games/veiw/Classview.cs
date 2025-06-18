@@ -7,6 +7,7 @@ using gamese.repo;
 using games.something;
 
 //consoleR = console row
+//gameI = nothing
 
 namespace games.veiw
 {
@@ -14,7 +15,7 @@ namespace games.veiw
     {
         public string displaymenu()
         {
-            co
+            
             Console.WriteLine("welcome to console inventory");
             Console.WriteLine("meun: ");
             Console.WriteLine("1. view all reconds in console");
@@ -33,7 +34,7 @@ namespace games.veiw
 
         public string DisplayGameMenu()
         {
-            Console.Clear();
+            
             Console.WriteLine("games inventory");
             Console.WriteLine("meun: ");
                 Console.WriteLine("1. view all reconds in games");
@@ -49,7 +50,7 @@ namespace games.veiw
 
         public string DisplayAccsseorey()
         {
-            Console.Clear();
+           
             Console.WriteLine("console Accsseorey inventory");
             Console.WriteLine("meun: ");
             Console.WriteLine("1. view all reconds in peripheral");
@@ -98,5 +99,19 @@ namespace games.veiw
             return int.Parse(Console.ReadLine());        
         }
 
+
+
+
+        //games table
+        public void displaygames(List<GameConsole> GameIL)
+        {
+            foreach (GameConsole gameI in GameIL)
+            {
+                Console.WriteLine($"{gameI.games_id},{gameI.games_name}");
+
+            }
+
+
+        }
     }
 }
