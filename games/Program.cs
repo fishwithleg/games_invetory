@@ -14,13 +14,18 @@ namespace games
         static void Main(string[] args)
         {
             Console.WriteLine("Hello there");
-            string connectionstring = "Data Source=(localdb)\\ProjectModels;Initial Catalog=colonse;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string connectionstring = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=console;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
             storemanager = new StoreManager(connectionstring);
             view = new Classview();
-            string choice = view.displaymenu();
+            string choice; 
+            do
+            { 
+              choice = view.displaymenu();
 
+            
 
+            
             switch (choice)
             {
                 case "1":
@@ -28,7 +33,8 @@ namespace games
 
                         List<Game> consoleRL = storemanager.GetEveryconsole();
                         view.displayconsole(consoleRL);
-                        Console.Clear();
+
+                        
 
                     }
 
@@ -44,61 +50,108 @@ namespace games
                     break;
                 case "2":
                     updateconsole();
-                    
-                    break;
-                case "5":
-                    {
 
-                        string choices = view.DisplayGameMenu();
-                        switch (choices)
-                        
+                        break;
+                    case "6":
+                        Console.Clear();
+
+
+                   break;   
+                case "5":
                         {
 
-                          
+                            string choice2 = view.DisplayGameMenu();
+                            switch (choice2)
 
-                            //    case "1":
-                            //        {
+                            {
+                                case "1":
+                                    {
 
-                            //            List<Game> consoleRL = storemanager.GetEveryGames();
-                            //            view.display(GameIL);
-                            //            Console.Clear();
+                                        List<Game> GameIL = storemanager.GetEveryconsole();
+                                        view.displayconsole(GameIL);
+                                        Console.Clear();
 
-                            //        }
+                                    }
 
-                            //        break;
-                            //    case "4":
-                            //        ();
+                                    break;
+                                case "4":
+                                    //deleteconsole();
 
 
-                            //        break;
-                            //    case "3":
-                            //        ();
+                                    break;
+                                case "3":
+                                    //insertnewconsole();
 
-                            //        break;
-                            //    case "2":
-                            //        ();
+                                    break;
+                                case "2":
+                                    //updateconsole();
 
+                                    break;
+                                    case "6":
+                                    choice = view.displaymenu();
+
+
+                                    break;
+                                case "5":
+                                    {
+
+                                        string choice3 = view.DisplayAccsseorey();
+                                        switch (choice3)
+                                        {
+                                            case "1":
+                                                {
+
+                                                    //List<Game> consoleRL = storemanager.GetEveryconsole();
+                                                    //view.displayconsole(consoleRL);
+                                                    //Console.Clear();
+
+                                                }
+
+                                                break;
+                                            case "4":
+                                                //deleteconsole();
+
+
+                                                break;
+                                            case "3":
+                                                //insertnewconsole();
+
+                                                break;
+                                            case "2":
+                                                //updateconsole();
+
+                                                break;
+                                            case "5":
+                                                choice2 = view.DisplayGameMenu();
+
+                                                break;
+                                        }
+                                        
+                                      
+                                    }
+                                    break;
+                            }
 
                         }
-                    }
                     
                     
 
 
                     break;
-                case "6":
+                case "7":
                     //exit = true;
+                    storemanager.closeconncetion();
                     break;
 
 
-                    break;
+                    
                 default:
                     Console.WriteLine("invalid choice please try again");
                     break;
+   
 
-
-            }
-            storemanager.closeconncetion();
+             }
+            } while (!choice.Equals("7"));
 
 
         }

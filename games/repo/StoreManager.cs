@@ -9,6 +9,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
 
 //consoleRL = console row list
+//GameIL = nothing
 
 namespace gamese.repo
 {
@@ -51,7 +52,7 @@ namespace gamese.repo
 
 
 
-
+        //connects to console
         public List<Game> GetEveryconsole()
         {
             List<Game> consoleRL = new List<Game>();
@@ -59,6 +60,7 @@ namespace gamese.repo
             using (SqlCommand cmd = new SqlCommand(sqlstring, conn))
 
             {
+               
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -74,28 +76,32 @@ namespace gamese.repo
             return consoleRL; 
         }
 
+        //connects to the games
+        public List<GameConsole> GetEveryGame()
+        {
+            List<GameConsole> GameIL = new List<GameConsole>();
+            string sqlstrings = "select * from product.games";
+            using (SqlCommand cmd = new SqlCommand(sqlstrings, conn))
 
-        //public List<GameConsole> GetEveryGames()
-        //{
-        //    List<GameConsole> GameIL = new List<GameConsole>();
-        //    string sqlstrings = "select * from product.console";
-        //    using (SqlCommand cmd = new SqlCommand(sqlstrings, conn))
+            {
+               
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int GamesId = Convert.ToInt32(reader["games_id"]);
+                        string GamesName = reader["games_name"].ToString();
+                        GameIL.Add(new GameConsole(GamesName, GamesId));
+                    }
+                }
 
-        //    {
-        //        using (SqlDataReader reader = cmd.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                int consoleid = Convert.ToInt32(reader["console_id"]);
-        //                string consolename = reader["console_name"].ToString();
-        //                GameIL.Add(new GameConsole(ingamesid, consolename));
-        //            }
-        //        }
+            }
 
-        //    }
+            return GameIL;
+        }
 
-        //    return GameIL;
-        //}
+
+
 
         public int updateconsole(int consoleId, string consoleName)
         { 
@@ -118,6 +124,7 @@ namespace gamese.repo
             {
                 using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name) values (console_id); select scope_identity();", conn))
                 {
+                //leads to a error
                 cmd.Parameters.AddWithValue("@brandname", Consoleptemp.console_name);
                 return Convert.ToInt32(cmd.ExecuteScalar);
                 }
@@ -129,6 +136,7 @@ namespace gamese.repo
         {
             using(SqlCommand cmd = new SqlCommand("delete from product.console where console_name = @brandname", conn))
             {
+                //problem
                 cmd.Parameters.AddWithValue("@brandname", consoleName);
                 return cmd.ExecuteNonQuery();
             

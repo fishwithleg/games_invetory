@@ -14,6 +14,7 @@ namespace games.veiw
     {
         public string displaymenu()
         {
+            co
             Console.WriteLine("welcome to console inventory");
             Console.WriteLine("meun: ");
             Console.WriteLine("1. view all reconds in console");
@@ -21,7 +22,7 @@ namespace games.veiw
             Console.WriteLine("3. insert new console");
             Console.WriteLine("4. delete console");
             Console.WriteLine("5. next");
-            Console.WriteLine("6. exit");
+            Console.WriteLine("6. clear current opration");
             Console.WriteLine("select the opition");
 
             return Console.ReadLine();
@@ -49,14 +50,13 @@ namespace games.veiw
         public string DisplayAccsseorey()
         {
             Console.Clear();
-            Console.WriteLine("games inventory");
+            Console.WriteLine("console Accsseorey inventory");
             Console.WriteLine("meun: ");
-            Console.WriteLine("1. view all reconds in games");
-            Console.WriteLine("2. update games name");
-            Console.WriteLine("3. insert new games");
-            Console.WriteLine("4. delete games");
-            Console.WriteLine("5. next");
-            Console.WriteLine("6. back");
+            Console.WriteLine("1. view all reconds in peripheral");
+            Console.WriteLine("2. update peripheral name");
+            Console.WriteLine("3. insert new peripheral");
+            Console.WriteLine("4. delete peripheral");
+            Console.WriteLine("5. back");
             Console.WriteLine("select the opition");
 
             return Console.ReadLine();
@@ -94,7 +94,7 @@ namespace games.veiw
 
         public int Getintinput1()
         {
-
+            //problem here
             return int.Parse(Console.ReadLine());        
         }
 

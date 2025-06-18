@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace games.something
 {
-    internal class GameConsole
+    public class GameConsole
     {
-        public char games_name {  get; set; }
+        public string games_name {  get; set; }
 
         public int games_id { get; set; }
 
-        public GameConsole (char ingamesname, int ingamesid)
+        public GameConsole (string GamesName, int GamesId)
         {
 
-            games_id = ingamesid;
+            games_id = GamesId;
 
-            games_name = ingamesname;
+            games_name = GamesName;
 
         }
     }
