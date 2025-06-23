@@ -70,10 +70,12 @@ namespace games
                             {
                                 case "1":
                                     {
-
-                                        //List<Game> GameIL = storemanager.GetEveryGame();
-                                        //view.displaygames(GameIL);
-                                        
+                                        Console.Clear();
+                                        Console.WriteLine("[heres the list]");
+                                        Console.WriteLine("--------------");
+                                        List<GameConsole> GameIL = storemanager.GetEveryGame();
+                                        view.displaygames(GameIL);
+                                        Console.WriteLine("--------------");
 
                                     }
 
@@ -93,7 +95,7 @@ namespace games
                                     break;
                                     case "6":
                                     Console.Clear();
-                                    choice2.Equals(choice);
+                                    
 
 
                                     break;

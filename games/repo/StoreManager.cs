@@ -77,6 +77,7 @@ namespace gamese.repo
         }
 
         //connects to the games
+
         public List<GameConsole> GetEveryGame()
         {
             List<GameConsole> GameIL = new List<GameConsole>();
@@ -84,7 +85,7 @@ namespace gamese.repo
             using (SqlCommand cmd = new SqlCommand(sqlstrings, conn))
 
             {
-               
+
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
