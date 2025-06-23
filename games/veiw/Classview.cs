@@ -113,5 +113,17 @@ namespace games.veiw
 
 
         }
+
+        //Accsseorey table
+        //public void DisplayAccsseorey(List<GameConsole> GameIL)
+        //{
+        //    foreach (GameConsole gameI in GameIL)
+        //    {
+        //        Console.WriteLine($"{gameI.games_id},{gameI.games_name}");
+
+        //    }
+
+
+        //}
     }
 }

@@ -10,6 +10,7 @@ using Microsoft.Identity.Client;
 
 //consoleRL = console row list
 //GameIL = nothing
+//AcsseorysLL = nothing
 
 namespace gamese.repo
 {
@@ -99,6 +100,31 @@ namespace gamese.repo
             }
 
             return GameIL;
+        }
+
+
+        //connects to acsseorys
+        public List<Acsseorys> GetEveryAcsseorys()
+        {
+            List<Acsseorys> AcsseorysLL = new List<Acsseorys>();
+            string sqlstrings = "select * from product.peripheral";
+            using (SqlCommand cmd = new SqlCommand(sqlstrings, conn))
+
+            {
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int AcsseorysId = Convert.ToInt32(reader["AcsseorysId"]);
+                        string AcsseorysName = reader["AcsseorysName"].ToString();
+                        AcsseorysLL.Add(new Acsseorys(AcsseorysName, AcsseorysId));
+                    }
+                }
+
+            }
+
+            return AcsseorysLL;
         }
 
 

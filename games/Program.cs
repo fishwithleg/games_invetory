@@ -109,9 +109,9 @@ namespace games
                                             case "1":
                                                 {
 
-                                                    //List<Game> consoleRL = storemanager.GetEveryconsole();
-                                                    //view.displayconsole(consoleRL);
-                                                    //Console.Clear();
+                                                    List<Acsseorys> AcsseorysLL = storemanager.GetEveryAcsseorys();
+                                                    view.DisplayAccsseorey(AcsseorysLL);
+                                                    Console.Clear();
 
                                                 }
 
