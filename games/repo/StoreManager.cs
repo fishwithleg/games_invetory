@@ -116,8 +116,8 @@ namespace gamese.repo
                 {
                     while (reader.Read())
                     {
-                        int AcsseorysId = Convert.ToInt32(reader["AcsseorysId"]);
-                        string AcsseorysName = reader["AcsseorysName"].ToString();
+                        int AcsseorysId = Convert.ToInt32(reader["peripheral_id"]);
+                        string AcsseorysName = reader["peripheral_name"].ToString();
                         AcsseorysLL.Add(new Acsseorys(AcsseorysName, AcsseorysId));
                     }
                 }

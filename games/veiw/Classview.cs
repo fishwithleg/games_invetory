@@ -115,15 +115,15 @@ namespace games.veiw
         }
 
         //Accsseorey table
-        //public void DisplayAccsseorey(List<GameConsole> GameIL)
-        //{
-        //    foreach (GameConsole gameI in GameIL)
-        //    {
-        //        Console.WriteLine($"{gameI.games_id},{gameI.games_name}");
+        public void DisplayAccsseorey(List<Acsseorys> AcsseorysLL)
+        {
+            foreach (Acsseorys AcsseorysL in AcsseorysLL)
+            {
+                Console.WriteLine($"{AcsseorysL.peripheral_id},{AcsseorysL.peripheral_name}");
 
-        //    }
+            }
 
 
-        //}
+        }
     }
 }

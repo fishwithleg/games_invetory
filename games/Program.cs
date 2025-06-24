@@ -108,10 +108,14 @@ namespace games
                                         {
                                             case "1":
                                                 {
-
+                                                    Console.Clear();
+                                                    Console.WriteLine("[heres the list]");
+                                                    Console.WriteLine("--------------");
                                                     List<Acsseorys> AcsseorysLL = storemanager.GetEveryAcsseorys();
                                                     view.DisplayAccsseorey(AcsseorysLL);
-                                                    Console.Clear();
+                                                    Console.WriteLine("--------------");
+                                                   
+
 
                                                 }
 
