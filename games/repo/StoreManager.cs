@@ -133,11 +133,11 @@ namespace gamese.repo
 
         public int updateconsole(int consoleId, string consoleName)
         { 
-           using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name) values (console_id); select scope_identity();", conn))
+           using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name) values (@consolename); select scope_identity();", conn))
             {
                 // problem here
-                cmd.Parameters.AddWithValue("@brandname", consoleName);
-                cmd.Parameters.AddWithValue("@brandname", consoleId);
+                cmd.Parameters.AddWithValue("@consolename", consoleName);
+                cmd.Parameters.AddWithValue("@consolename", consoleId);
                 return cmd.ExecuteNonQuery();
             }
 
