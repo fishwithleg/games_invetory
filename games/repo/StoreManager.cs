@@ -94,7 +94,9 @@ namespace gamese.repo
                     {
                         int GamesId = Convert.ToInt32(reader["games_id"]);
                         string GamesName = reader["games_name"].ToString();
-                        GameIL.Add(new GameConsole(GamesName, GamesId));
+                        string GamesRegion = "games_region".ToString();
+                        string GamesGenre = "games_genre".ToString();
+                        GameIL.Add(new GameConsole(GamesName, GamesId, GamesRegion, GamesGenre));
                     }
                 }
 
@@ -130,7 +132,7 @@ namespace gamese.repo
 
 
 
-
+        //console optiation
         public int updateconsole(int consoleId, string consoleName)
         { 
            using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name) values (@consolename); select scope_identity();", conn))
@@ -144,11 +146,6 @@ namespace gamese.repo
 
         }
 
-
-
-
-
-
             public int insertnewconsole(Game Consoleptemp)
             {
                 using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name,console_supplier) values (@consolename,@consolesuppiler); select scope_identity();", conn))
@@ -157,11 +154,8 @@ namespace gamese.repo
                 cmd.Parameters.AddWithValue("@consolename", Consoleptemp.console_name);
                 cmd.Parameters.AddWithValue("@consolesupplier", Consoleptemp.console_supplier);
                 return Convert.ToInt32(cmd.ExecuteScalar);
-                
-            }
-        
-        
-            }
+            }        
+                }
 
         public int deleteconsole(string consoleName)
         {
@@ -172,9 +166,45 @@ namespace gamese.repo
                 return cmd.ExecuteNonQuery();
             
             }
+        }
+
+        //updategames
+
+        //games opatiton
+
+        public int updategames(int GamesId, string GamesName)
+        {
+            using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name) values (@gamesname); select scope_identity();", conn))
+            {
+                // problem here
+                cmd.Parameters.AddWithValue("@gamesname", GamesName);
+                cmd.Parameters.AddWithValue("@gamesname", GamesId);
+                return cmd.ExecuteNonQuery();
+            }
 
 
+        }
 
+        public int insertnewgames(Game gamestemp)
+        {
+            using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name,games_region) values (@gamesname,@GamesRegion); select scope_identity();", conn))
+            {
+                //problem here
+                cmd.Parameters.AddWithValue("@consolename", gamestemp.games_name);
+                cmd.Parameters.AddWithValue("@consolesupplier", gamestemp.games_region);
+                return Convert.ToInt32(cmd.ExecuteScalar);
+            }
+        }
+
+        public int deletegame(string consoleName)
+        {
+            using (SqlCommand cmd = new SqlCommand("delete from product.console where console_name = @consolename", conn))
+            {
+                //works
+                cmd.Parameters.AddWithValue("@consolename", consoleName);
+                return cmd.ExecuteNonQuery();
+
+            }
         }
 
 

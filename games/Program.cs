@@ -81,16 +81,16 @@ namespace games
 
                                     break;
                                 case "4":
-                                    //deleteconsole();
+                                    deletegames();
 
 
                                     break;
                                 case "3":
-                                    //insertnewconsole();
+                                    insertnewgames();
 
                                     break;
                                 case "2":
-                                    //updateconsole();
+                                    updategames();
 
                                     break;
                                     case "6":
@@ -208,8 +208,41 @@ namespace games
 
 
 
+        //game swtich
+        public static void updategames()
+        {
+            // uses the id of the console table
+            view.displaymessage("[enter the games id to update it]\n---------------------------------\n1.use the id of the game not the name\n---------------------------------\n");
+            int GamesId = view.Getintinput1();
+            view.displaymessage("[enter new games name] ");
+            string GamesName = view.getinput();
+            int rowaffected = storemanager.updategames(GamesId, GamesName);
+            view.displaymessage($"rows affected");
+        }
 
-        
+        public static void insertnewgames()
+        {
+            view.displaymessage("please entre a new console: ");
+            string consoleName = view.getinput();
+            view.displaymessage("please enter a new suppiler");
+            string consoleSupplier = view.getinput();
+            int consoleId = 0;
+            Game console1 = new Game(consoleId, consoleName, consoleSupplier);
+            //Game console2 = new Game(consoleId);
+            //int createId = storemanager.insertnewconsole(console2);
+            int createId = storemanager.insertnewconsole(console1);
+            view.displaymessage($"new console ineserted with ID: {consoleId}");
+        }
+
+        private static void deletegames()
+        {
+            view.displaymessage("[enter the console name to delete]\n-----------------------------------------\n1.be sure its in the table\n2.it cant be a id only the name of the console\n------------------------------------------");
+            string consoleName = view.getinput();
+            int rowaffected = storemanager.deleteconsole(consoleName);
+        }
+
+
+
 
 
 

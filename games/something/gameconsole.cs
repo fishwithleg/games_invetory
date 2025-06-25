@@ -12,13 +12,19 @@ namespace games.something
 
         public int games_id { get; set; }
 
-        public GameConsole (string GamesName, int GamesId)
+        public string games_region {  get; set; }
+
+        public string games_genre {  get; set; }
+        public GameConsole (string GamesName, int GamesId, string GamesRegion, string GamesGenre)
         {
 
             games_id = GamesId;
 
             games_name = GamesName;
 
+            games_region = GamesRegion;
+
+            games_genre = GamesGenre;
         }
     }
 }

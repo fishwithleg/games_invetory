@@ -65,7 +65,7 @@ namespace games.veiw
 
 
 
-
+        //console table
         public void displayconsole(List<Game> consoleRL)
         {
             foreach (Game consoleR in consoleRL)
