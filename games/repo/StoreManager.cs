@@ -68,7 +68,8 @@ namespace gamese.repo
                     {
                         int consoleid = Convert.ToInt32(reader["console_id"]);
                         string consolename = reader["console_name"].ToString();
-                        consoleRL.Add(new Game(consoleid, consolename));
+                        string consoleSupplier = "console_suppiler".ToString();
+                        consoleRL.Add(new Game(consoleid, consolename, consoleSupplier));
                     }
                 }
 
@@ -134,6 +135,7 @@ namespace gamese.repo
         { 
            using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name) values (console_id); select scope_identity();", conn))
             {
+                // problem here
                 cmd.Parameters.AddWithValue("@brandname", consoleName);
                 cmd.Parameters.AddWithValue("@brandname", consoleId);
                 return cmd.ExecuteNonQuery();
@@ -149,22 +151,24 @@ namespace gamese.repo
 
             public int insertnewconsole(Game Consoleptemp)
             {
-                using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name) values (console_id); select scope_identity();", conn))
+                using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name,console_supplier) values (@consolename,@consolesuppiler); select scope_identity();", conn))
                 {
-                //leads to a error
-                cmd.Parameters.AddWithValue("@brandname", Consoleptemp.console_name);
+                //problem here
+                cmd.Parameters.AddWithValue("@consolename", Consoleptemp.console_name);
+                cmd.Parameters.AddWithValue("@consolesupplier", Consoleptemp.console_supplier);
                 return Convert.ToInt32(cmd.ExecuteScalar);
-                }
+                
+            }
         
         
             }
 
         public int deleteconsole(string consoleName)
         {
-            using(SqlCommand cmd = new SqlCommand("delete from product.console where console_name = @brandname", conn))
+            using(SqlCommand cmd = new SqlCommand("delete from product.console where console_name = @consolename", conn))
             {
-                //problem
-                cmd.Parameters.AddWithValue("@brandname", consoleName);
+                //works
+                cmd.Parameters.AddWithValue("@consolename", consoleName);
                 return cmd.ExecuteNonQuery();
             
             }
