@@ -12,13 +12,15 @@ namespace games.something
 
         public int peripheral_id { get; set; }
 
-        public Acsseorys(string AcsseorysName, int AcsseorysId)
+        public string peripheral_supplier { get; set; }
+        public Acsseorys(string AcsseorysName, int AcsseorysId, string AcsseorysSupplier)
         {
 
             peripheral_id = AcsseorysId;
 
             peripheral_name = AcsseorysName;
 
+            peripheral_supplier = AcsseorysSupplier;
         }
     }
 }

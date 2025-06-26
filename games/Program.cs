@@ -166,7 +166,7 @@ namespace games
    
 
              }
-            } while (!choice.Equals("loop"));
+            } while (!choice.Equals("loop")); Console.Clear();
 
 
         }
@@ -223,22 +223,24 @@ namespace games
         public static void insertnewgames()
         {
             view.displaymessage("please entre a new console: ");
-            string consoleName = view.getinput();
+            string GamesName = view.getinput();
             view.displaymessage("please enter a new suppiler");
-            string consoleSupplier = view.getinput();
-            int consoleId = 0;
-            Game console1 = new Game(consoleId, consoleName, consoleSupplier);
+            string GamesRegion = view.getinput();
+            view.displaymessage("what genre is the game");
+            string GamesGenre = view.getinput();
+            int GamesId = 0;
+            GameConsole console1 = new GameConsole(GamesName, GamesId, GamesRegion,GamesGenre);
             //Game console2 = new Game(consoleId);
             //int createId = storemanager.insertnewconsole(console2);
-            int createId = storemanager.insertnewconsole(console1);
-            view.displaymessage($"new console ineserted with ID: {consoleId}");
+            int createId = storemanager.insertnewgames(console1);
+            view.displaymessage($"new games ineserted with ID: {GamesId}");
         }
 
         private static void deletegames()
         {
-            view.displaymessage("[enter the console name to delete]\n-----------------------------------------\n1.be sure its in the table\n2.it cant be a id only the name of the console\n------------------------------------------");
-            string consoleName = view.getinput();
-            int rowaffected = storemanager.deleteconsole(consoleName);
+            view.displaymessage("[enter the games name to delete]\n-----------------------------------------\n1.be sure its in the table\n2.it cant be a id only the name of the game\n------------------------------------------");
+            string GamesName = view.getinput();
+            int rowaffected = storemanager.deleteconsole(GamesName);
         }
 
 
