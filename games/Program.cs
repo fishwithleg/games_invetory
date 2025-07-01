@@ -202,7 +202,7 @@ namespace games
 
         private static void deleteconsole()
         {
-            view.displaymessage("[enter the console name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table\n2.it cant be a id only the name of the console]\n------------------------------------------");
+            view.displaymessage("[enter the console name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table]\n[2.it cant be a id only the name of the console]\n------------------------------------------");
             string consoleName = view.getinput();
             int rowaffected = storemanager.deleteconsole(consoleName);
         }
@@ -213,7 +213,7 @@ namespace games
         public static void updategames()
         {
             // uses the id of the console table
-            view.displaymessage("[enter the games id to update it]\n [how to use]\n---------------------------------\n1.use the id of the game not the name\n---------------------------------\n");
+            view.displaymessage("[enter the games id to update it]\n [how to use]\n---------------------------------\n[1.use the id of the game not the name]\n---------------------------------\n");
             int GamesId = view.Getintinput1();
             view.displaymessage("[enter new games name] ");
             string GamesName = view.getinput();
@@ -240,7 +240,7 @@ namespace games
 
         private static void deletegames()
         {
-            view.displaymessage("[enter the games name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table\n2.it cant be a id only the name of the game]\n------------------------------------------");
+            view.displaymessage("[enter the games name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table]\n[2.it cant be a id only the name of the game]\n------------------------------------------");
             string GamesName = view.getinput();
             int rowaffected = storemanager.deleteconsole(GamesName);
         }
@@ -273,10 +273,10 @@ namespace games
             view.displaymessage($"new acsseorys ineserted with ID: {AcsseorysId}");
         }
 
-
+        //dosent work
         private static void deleteacsseorys()
         {
-            view.displaymessage("[enter the acsseorys name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table\n2.it cant be a id only the name of the acsseorys]\n------------------------------------------");
+            view.displaymessage("[enter the acsseorys name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table]\n[2.it cant be a id only the name of the acsseorys]\n------------------------------------------");
             string AcsseorysName = view.getinput();
             int rowaffected = storemanager.deleteacsseorys(AcsseorysName);
         }
