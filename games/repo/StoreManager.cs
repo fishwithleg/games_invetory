@@ -212,13 +212,13 @@ namespace gamese.repo
 
 
         //Acsseorys opition
-        public int updateacsseorys(int GamesId, string GamesName)
+        public int updateacsseorys(int AcsseorysId, string AcsseorysName)
         {
             using (SqlCommand cmd = new SqlCommand("insert into product.peripheral (peripheral_name) values (@AcsseorysName); select scope_identity();", conn))
             {
                 //unable to fix the problem
-                cmd.Parameters.AddWithValue("@AcsseorysName", GamesName);
-                cmd.Parameters.AddWithValue("@AcsseorysName", GamesId);
+                cmd.Parameters.AddWithValue("@AcsseorysName", AcsseorysName);
+                cmd.Parameters.AddWithValue("@AcsseorysName", AcsseorysId);
                 return cmd.ExecuteNonQuery();
             }
 

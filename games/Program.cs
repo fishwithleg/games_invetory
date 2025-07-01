@@ -177,7 +177,7 @@ namespace games
         public static void updateconsole()
         {
             // uses the id of the console table
-            view.displaymessage("[enter the console id to update it]\n---------------------------------\n1.use the id of the console not the name\n---------------------------------\n");
+            view.displaymessage("[enter the console id to update it]\n [how to use]\n---------------------------------\n[1.use the id of the console not the name]\n---------------------------------\n");
             int consoleId = view.Getintinput1();
             view.displaymessage("[enter new console name] ");
             string consoleName = view.getinput();
@@ -187,6 +187,7 @@ namespace games
 
         public static void insertnewconsole()
         {
+            view.displaymessage("[enter the console you want to add]\n------------------------------------\n");
             view.displaymessage("please entre a new console: ");
             string consoleName = view.getinput();
             view.displaymessage("please enter a new suppiler");
@@ -201,7 +202,7 @@ namespace games
 
         private static void deleteconsole()
         {
-            view.displaymessage("[enter the console name to delete]\n-----------------------------------------\n1.be sure its in the table\n2.it cant be a id only the name of the console\n------------------------------------------");
+            view.displaymessage("[enter the console name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table\n2.it cant be a id only the name of the console]\n------------------------------------------");
             string consoleName = view.getinput();
             int rowaffected = storemanager.deleteconsole(consoleName);
         }
@@ -212,7 +213,7 @@ namespace games
         public static void updategames()
         {
             // uses the id of the console table
-            view.displaymessage("[enter the games id to update it]\n---------------------------------\n1.use the id of the game not the name\n---------------------------------\n");
+            view.displaymessage("[enter the games id to update it]\n [how to use]\n---------------------------------\n1.use the id of the game not the name\n---------------------------------\n");
             int GamesId = view.Getintinput1();
             view.displaymessage("[enter new games name] ");
             string GamesName = view.getinput();
@@ -222,6 +223,7 @@ namespace games
 
         public static void insertnewgames()
         {
+            view.displaymessage("[enter the games you want to add]\n------------------------------------\n");
             view.displaymessage("please entre a new console: ");
             string GamesName = view.getinput();
             view.displaymessage("please enter a new suppiler");
@@ -238,14 +240,46 @@ namespace games
 
         private static void deletegames()
         {
-            view.displaymessage("[enter the games name to delete]\n-----------------------------------------\n1.be sure its in the table\n2.it cant be a id only the name of the game\n------------------------------------------");
+            view.displaymessage("[enter the games name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table\n2.it cant be a id only the name of the game]\n------------------------------------------");
             string GamesName = view.getinput();
             int rowaffected = storemanager.deleteconsole(GamesName);
         }
 
 
 
+        //Acsseorys swtich
+        public static void updateacsseorys()
+        {
+            // uses the id of the console table
+            view.displaymessage("[enter the acsseorys id to update it]\n [how to use] \n---------------------------------\n[1.use the id of the acsseorys not the name]\n---------------------------------\n");
+            int AcsseorysId = view.Getintinput1();
+            view.displaymessage("[enter new acsseorys name] ");
+            string AcsseorysName = view.getinput();
+            int rowaffected = storemanager.updateacsseorys(AcsseorysId, AcsseorysName);
+            view.displaymessage($"rows affected");
+        }
 
+
+        public static void insertnewacsseorys()
+        {
+            view.displaymessage("[enter the acsseorys you want to add]\n------------------------------------\n");
+            view.displaymessage("please entre a new acsseorys: ");
+            string AcsseorysName = view.getinput();
+            view.displaymessage("please enter a new suppiler");
+            string AcsseorysSupplier = view.getinput();
+            int AcsseorysId = 0;
+            Acsseorys console1 = new Acsseorys(AcsseorysName, AcsseorysId, AcsseorysSupplier);
+            int createId = storemanager.insertnewacsseorys(console1);
+            view.displaymessage($"new acsseorys ineserted with ID: {AcsseorysId}");
+        }
+
+
+        private static void deleteacsseorys()
+        {
+            view.displaymessage("[enter the acsseorys name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table\n2.it cant be a id only the name of the acsseorys]\n------------------------------------------");
+            string AcsseorysName = view.getinput();
+            int rowaffected = storemanager.deleteacsseorys(AcsseorysName);
+        }
 
 
 
