@@ -136,11 +136,11 @@ namespace gamese.repo
         //console optiation
         public int updateconsole(int consoleId, string consoleName)
         { 
-           using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name) values (@consolename); select scope_identity();", conn))
+           using (SqlCommand cmd = new SqlCommand("insert into product.console (console_id) values (@consoleid); select scope_identity();", conn))
             {
                 //unable to fix the problem
-                cmd.Parameters.AddWithValue("@consolename", consoleName);
-                cmd.Parameters.AddWithValue("@consolename", consoleId);
+                cmd.Parameters.AddWithValue("@consoleid", consoleName);
+                cmd.Parameters.AddWithValue("@consoleid", consoleId);
                 return cmd.ExecuteNonQuery();
             }
 
@@ -149,13 +149,14 @@ namespace gamese.repo
 
             public int insertnewconsole(Game Consoleptemp)
             {
-                using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name,console_supplier) values (@consolename,@consolesuppiler); select scope_identity();", conn))
+                using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name,console_supplier) values (@consolename,@consolesuppile); select scope_identity();", conn))
                 {
                 //unable to fix the problem
                 cmd.Parameters.AddWithValue("@consolename", Consoleptemp.console_name);
-                cmd.Parameters.AddWithValue("@consolesupplier", Consoleptemp.console_supplier);
-                return Convert.ToInt32(cmd.ExecuteScalar);              
-                }        
+                cmd.Parameters.AddWithValue("@consolesuppile", Consoleptemp.console_supplier);
+                return Convert.ToInt32(cmd.ExecuteScalar());
+                Console.ReadLine();
+            }        
             }
 
         public int deleteconsole(string consoleName)
@@ -217,7 +218,7 @@ namespace gamese.repo
             using (SqlCommand cmd = new SqlCommand("insert into product.peripheral (peripheral_name) values (@AcsseorysName); select scope_identity();", conn))
             {
                 //unable to fix the problem
-                cmd.Parameters.AddWithValue("@AcsseorysName", AcsseorysName);
+                //cmd.Parameters.AddWithValue("@AcsseorysName", AcsseorysName);
                 cmd.Parameters.AddWithValue("@AcsseorysName", AcsseorysId);
                 return cmd.ExecuteNonQuery();
             }
