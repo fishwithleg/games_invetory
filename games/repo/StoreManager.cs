@@ -187,15 +187,17 @@ namespace gamese.repo
 
         }
 
-        public int insertnewgames(GameConsole gamestemp)
+        public int insertnewgames(GameConsole gametemp)
         {
-            using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name,games_region,games_genre) values (@gamesname,@GamesRegion,@gamesgenre); select scope_identity();", conn))
+            using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name,games_region,games_genre) values (@gamename,@gameregion,gamegenre); select scope_identity();", conn))
             {
                 //unable to fix the problem
-                cmd.Parameters.AddWithValue("@consolename", gamestemp.games_name);
-                cmd.Parameters.AddWithValue("@consolesupplier", gamestemp.games_region);
-                cmd.Parameters.AddWithValue("@gamesgenre", gamestemp.games_genre);
+                cmd.Parameters.AddWithValue("@games_name", gametemp.games_name);
+                cmd.Parameters.AddWithValue("@games_region", gametemp.games_region);
+                cmd.Parameters.AddWithValue("@games_genre", gametemp.games_genre);
                 return Convert.ToInt32(cmd.ExecuteScalar);
+                Console.ReadLine();
+                
             }
         }
 
