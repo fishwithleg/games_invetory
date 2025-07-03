@@ -121,16 +121,16 @@ namespace games
 
                                                 break;
                                             case "4":
-                                                //deleteconsole();
+                                                deleteacsseorys();
 
 
                                                 break;
                                             case "3":
-                                                //insertnewconsole();
+                                                insertnewacsseorys();
 
                                                 break;
                                             case "2":
-                                                //updateconsole();
+                                                updateacsseorys();
 
                                                 break;
                                             case "5":

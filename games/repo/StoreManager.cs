@@ -189,13 +189,13 @@ namespace gamese.repo
 
         public int insertnewgames(GameConsole gametemp)
         {
-            using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name,games_region,games_genre) values (@gamename,@gameregion,gamegenre); select scope_identity();", conn))
+            using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name,games_region,games_genre) values (@gamesname,@gamesregion,gamesgenre); select scope_identity();", conn))
             {
                 //unable to fix the problem
-                cmd.Parameters.AddWithValue("@games_name", gametemp.games_name);
-                cmd.Parameters.AddWithValue("@games_region", gametemp.games_region);
-                cmd.Parameters.AddWithValue("@games_genre", gametemp.games_genre);
-                return Convert.ToInt32(cmd.ExecuteScalar);
+                cmd.Parameters.AddWithValue("@gamesname", gametemp.games_name);
+                cmd.Parameters.AddWithValue("@gamesregion", gametemp.games_region);
+                cmd.Parameters.AddWithValue("@gamesgenre", gametemp.games_genre);
+                return Convert.ToInt32(cmd.ExecuteScalar());
                 Console.ReadLine();
                 
             }
@@ -235,7 +235,8 @@ namespace gamese.repo
                 //unable to fix the problem
                 cmd.Parameters.AddWithValue("@AcsseorysName", peripheraltemp.peripheral_name);
                 cmd.Parameters.AddWithValue("@AcsseorysSupplier", peripheraltemp.peripheral_supplier);
-                return Convert.ToInt32(cmd.ExecuteScalar);
+                return Convert.ToInt32(cmd.ExecuteScalar());
+                Console.ReadLine();  
             }
         }
 
