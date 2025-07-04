@@ -136,10 +136,10 @@ namespace gamese.repo
         //console optiation
         public int updateconsole(int consoleId, string consoleName)
         { 
-           using (SqlCommand cmd = new SqlCommand("insert into product.console (console_id) values (@consoleid); select scope_identity();", conn))
+           using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name,console_id) values (@consolename,consoleid); select scope_identity();", conn))
             {
                 //unable to fix the problem
-                cmd.Parameters.AddWithValue("@consoleid", consoleName);
+                cmd.Parameters.AddWithValue("@consolename", consoleName);
                 cmd.Parameters.AddWithValue("@consoleid", consoleId);
                 return cmd.ExecuteNonQuery();
             }

@@ -179,9 +179,9 @@ namespace games
             // uses the id of the console table
             view.displaymessage("[enter the console id to update it]\n [how to use]\n---------------------------------\n[1.use the id of the console not the name]\n---------------------------------\n");
             view.displaymessage("[enter new console id] ");
-            string consoleName = view.getinput();
-            view.displaymessage("[enter new console name] ");
             int consoleId = view.Getintinput1();
+            view.displaymessage("[enter new console name] ");
+            string consoleName = view.getinput(); 
             int rowaffected = storemanager.updateconsole(consoleId,consoleName);
             view.displaymessage($"rows affected");
         }

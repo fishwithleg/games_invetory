@@ -102,6 +102,8 @@ namespace games.veiw
 
 
 
+
+
         //games table
         public void displaygames(List<GameConsole> GameIL)
         {
