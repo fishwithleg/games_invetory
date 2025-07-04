@@ -66,10 +66,10 @@ namespace gamese.repo
                 {
                     while (reader.Read())
                     {
-                        int consoleid = Convert.ToInt32(reader["console_id"]);
-                        string consolename = reader["console_name"].ToString();
+                        int consoleId = Convert.ToInt32(reader["console_id"]);
+                        string consoleName = reader["console_name"].ToString();
                         string consoleSupplier = "console_suppiler".ToString();
-                        consoleRL.Add(new Game(consoleid, consolename, consoleSupplier));
+                        consoleRL.Add(new Game(consoleId, consoleName, consoleSupplier));
                     }
                 }
 
@@ -136,11 +136,11 @@ namespace gamese.repo
         //console optiation
         public int updateconsole(int consoleId, string consoleName)
         { 
-           using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name,console_id) values (@consolename,consoleid); select scope_identity();", conn))
+           using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name,console_id) values (@consolename,@console_id); select scope_identity();", conn))
             {
                 //unable to fix the problem
                 cmd.Parameters.AddWithValue("@consolename", consoleName);
-                cmd.Parameters.AddWithValue("@consoleid", consoleId);
+                cmd.Parameters.AddWithValue("@console_id", consoleId);
                 return cmd.ExecuteNonQuery();
             }
 
