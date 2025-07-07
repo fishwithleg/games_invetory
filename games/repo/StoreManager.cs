@@ -134,13 +134,14 @@ namespace gamese.repo
 
 
         //console optiation
+
         public int updateconsole(int consoleId, string consoleName)
-        { 
-           using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name,console_id) values (@consolename,@console_id); select scope_identity();", conn))
+        {
+            using (SqlCommand cmd = new SqlCommand($"update product.console set console_name = @consolename where console_id = @consoleid", conn))
             {
                 //unable to fix the problem
                 cmd.Parameters.AddWithValue("@consolename", consoleName);
-                cmd.Parameters.AddWithValue("@console_id", consoleId);
+                cmd.Parameters.AddWithValue("@consoleid", consoleId);
                 return cmd.ExecuteNonQuery();
             }
 
@@ -176,11 +177,11 @@ namespace gamese.repo
 
         public int updategames(int GamesId, string GamesName)
         {
-            using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name) values (@gamesname); select scope_identity();", conn))
+            using (SqlCommand cmd = new SqlCommand($"update product.games set games_name = @gamesname where games_id = @gamesid", conn))
             {
                 //unable to fix the problem
                 cmd.Parameters.AddWithValue("@gamesname", GamesName);
-                cmd.Parameters.AddWithValue("@gamesname", GamesId);
+                cmd.Parameters.AddWithValue("@gamesid", GamesId);
                 return cmd.ExecuteNonQuery();
             }
 
@@ -217,11 +218,11 @@ namespace gamese.repo
         //Acsseorys opition
         public int updateacsseorys(int AcsseorysId, string AcsseorysName)
         {
-            using (SqlCommand cmd = new SqlCommand("insert into product.peripheral (peripheral_name) values (@AcsseorysName); select scope_identity();", conn))
+            using (SqlCommand cmd = new SqlCommand($"update product.peripheral set peripheral_name = @AcsseorysName where peripheral_id = @Acsseorysid", conn))
             {
                 //unable to fix the problem
-                //cmd.Parameters.AddWithValue("@AcsseorysName", AcsseorysName);
-                cmd.Parameters.AddWithValue("@AcsseorysName", AcsseorysId);
+                cmd.Parameters.AddWithValue("@AcsseorysName", AcsseorysName);
+                cmd.Parameters.AddWithValue("@Acsseorysid", AcsseorysId);
                 return cmd.ExecuteNonQuery();
             }
 
