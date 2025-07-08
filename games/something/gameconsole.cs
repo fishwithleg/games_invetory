@@ -15,7 +15,9 @@ namespace games.something
         public string games_region {  get; set; }
 
         public string games_genre {  get; set; }
-        public GameConsole (string GamesName, int GamesId, string GamesRegion, string GamesGenre)
+
+        public string consoles_name { get; set; }
+        public GameConsole (string GamesName, int GamesId, string GamesRegion, string GamesGenre, string ConsolesForGamesName)
         {
 
             games_id = GamesId;
@@ -25,6 +27,8 @@ namespace games.something
             games_region = GamesRegion;
 
             games_genre = GamesGenre;
+
+            consoles_name = ConsolesForGamesName;
         }
     }
 }

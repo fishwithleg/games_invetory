@@ -96,7 +96,8 @@ namespace gamese.repo
                         string GamesName = reader["games_name"].ToString();
                         string GamesRegion = "games_region".ToString();
                         string GamesGenre = "games_genre".ToString();
-                        GameIL.Add(new GameConsole(GamesName, GamesId, GamesRegion, GamesGenre));
+                        string ConsolesForGamesName = "consoles_name".ToString();
+                        GameIL.Add(new GameConsole(GamesName, GamesId, GamesRegion, GamesGenre, ConsolesForGamesName));
                     }
                 }
 
@@ -190,12 +191,13 @@ namespace gamese.repo
 
         public int insertnewgames(GameConsole gametemp)
         {
-            using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name,games_region,games_genre) values (@gamesname,@gamesregion,gamesgenre); select scope_identity();", conn))
+            using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name,games_region,games_genre,consoles_name) values (@gamesname,@gamesregion,@gamesgenre,@gamesfakeshare); select scope_identity();", conn))
             {
                 //unable to fix the problem
                 cmd.Parameters.AddWithValue("@gamesname", gametemp.games_name);
                 cmd.Parameters.AddWithValue("@gamesregion", gametemp.games_region);
                 cmd.Parameters.AddWithValue("@gamesgenre", gametemp.games_genre);
+                cmd.Parameters.AddWithValue("gamesfakeshare", gametemp.consoles_name);
                 return Convert.ToInt32(cmd.ExecuteScalar());
                 Console.ReadLine();
                 

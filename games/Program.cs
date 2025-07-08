@@ -225,14 +225,16 @@ namespace games
         public static void insertnewgames()
         {
             view.displaymessage("[enter the games you want to add]\n------------------------------------\n");
-            view.displaymessage("[please entre a new console:] ");
+            view.displaymessage("[please entre a new games:] ");
             string GamesName = view.getinput();
-            view.displaymessage("[please enter a new suppiler]");
+            view.displaymessage("[please enter a new place of origin]");
             string GamesRegion = view.getinput();
             view.displaymessage("[what genre is the game]");
             string GamesGenre = view.getinput();
+            view.displaymessage("[what genre is console combatilbe with]");
+            string ConsolesForGamesName = view.getinput();
             int GamesId = 0;
-            GameConsole console2 = new GameConsole(GamesName, GamesId, GamesRegion,GamesGenre);
+            GameConsole console2 = new GameConsole(GamesName, GamesId, GamesRegion,GamesGenre,ConsolesForGamesName);
             //Game console2 = new Game(consoleId);
             //int createId = storemanager.insertnewconsole(console2);
             int createId = storemanager.insertnewgames(console2);
