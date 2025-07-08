@@ -231,7 +231,7 @@ namespace games
             string GamesRegion = view.getinput();
             view.displaymessage("[what genre is the game]");
             string GamesGenre = view.getinput();
-            view.displaymessage("[what genre is console combatilbe with]");
+            view.displaymessage("[what games is compabiltable with what console]");
             string ConsolesForGamesName = view.getinput();
             int GamesId = 0;
             GameConsole console2 = new GameConsole(GamesName, GamesId, GamesRegion,GamesGenre,ConsolesForGamesName);
@@ -245,7 +245,7 @@ namespace games
         {
             view.displaymessage("[enter the games name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table]\n[2.it cant be a id only the name of the game]\n------------------------------------------");
             string GamesName = view.getinput();
-            int rowaffected = storemanager.deleteconsole(GamesName);
+            int rowaffected = storemanager.deletegame(GamesName);
         }
 
 

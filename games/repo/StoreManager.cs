@@ -108,6 +108,7 @@ namespace gamese.repo
 
 
         //connects to acsseorys
+
         public List<Acsseorys> GetEveryAcsseorys()
         {
             List<Acsseorys> AcsseorysLL = new List<Acsseorys>();
@@ -136,6 +137,7 @@ namespace gamese.repo
 
         //console optiation
 
+        //update console
         public int updateconsole(int consoleId, string consoleName)
         {
             using (SqlCommand cmd = new SqlCommand($"update product.console set console_name = @consolename where console_id = @consoleid", conn))
@@ -149,7 +151,8 @@ namespace gamese.repo
 
         }
 
-            public int insertnewconsole(Game Consoleptemp)
+        //console insert
+        public int insertnewconsole(Game Consoleptemp)
             {
                 using (SqlCommand cmd = new SqlCommand("insert into product.console (console_name,console_supplier) values (@consolename,@consolesuppile); select scope_identity();", conn))
                 {
@@ -161,21 +164,23 @@ namespace gamese.repo
             }        
             }
 
+        //delete console
         public int deleteconsole(string consoleName)
         {
             using(SqlCommand cmd = new SqlCommand("delete from product.console where console_name = @consolename", conn))
             {
-                //works
+                
                 cmd.Parameters.AddWithValue("@consolename", consoleName);
                 return cmd.ExecuteNonQuery();
             
             }
         }
 
-       
+
 
         //games opatiton
 
+        //update games
         public int updategames(int GamesId, string GamesName)
         {
             using (SqlCommand cmd = new SqlCommand($"update product.games set games_name = @gamesname where games_id = @gamesid", conn))
@@ -188,29 +193,28 @@ namespace gamese.repo
 
 
         }
-
+        //games insert
         public int insertnewgames(GameConsole gametemp)
         {
             using (SqlCommand cmd = new SqlCommand("insert into product.games (games_name,games_region,games_genre,consoles_name) values (@gamesname,@gamesregion,@gamesgenre,@gamesfakeshare); select scope_identity();", conn))
             {
-                //unable to fix the problem
+                
                 cmd.Parameters.AddWithValue("@gamesname", gametemp.games_name);
                 cmd.Parameters.AddWithValue("@gamesregion", gametemp.games_region);
                 cmd.Parameters.AddWithValue("@gamesgenre", gametemp.games_genre);
-                //need to get the main product sql to modify the work
                 cmd.Parameters.AddWithValue("gamesfakeshare", gametemp.consoles_name);
                 return Convert.ToInt32(cmd.ExecuteScalar());
                 Console.ReadLine();
                 
             }
         }
-
+        //delete games
         public int deletegame(string GamesName)
         {
-            using (SqlCommand cmd = new SqlCommand("delete from product.games where games_name = @consolename", conn))
+            using (SqlCommand cmd = new SqlCommand("delete from product.games where games_name = @gamesname", conn))
             {
                 //works
-                cmd.Parameters.AddWithValue("@GamesName", GamesName);
+                cmd.Parameters.AddWithValue("@gamesname", GamesName);
                 return cmd.ExecuteNonQuery();
 
             }
@@ -219,6 +223,8 @@ namespace gamese.repo
 
 
         //Acsseorys opition
+
+        //update acsseorys
         public int updateacsseorys(int AcsseorysId, string AcsseorysName)
         {
             using (SqlCommand cmd = new SqlCommand($"update product.peripheral set peripheral_name = @AcsseorysName where peripheral_id = @Acsseorysid", conn))
@@ -232,6 +238,7 @@ namespace gamese.repo
 
         }
 
+        //acsseorys insert
         public int insertnewacsseorys(Acsseorys peripheraltemp)
         {
             using (SqlCommand cmd = new SqlCommand("insert into product.peripheral(peripheral_name,peripheral_supplier) values (@AcsseorysName,@AcsseorysSupplier); select scope_identity();", conn))
@@ -244,9 +251,10 @@ namespace gamese.repo
             }
         }
 
+        //delete acsseorys
         public int deleteacsseorys(string AcsseorysName)
         {
-            using (SqlCommand cmd = new SqlCommand("delete from product.peripheral where peripheral_name = (@AcsseorysName), conn"))
+            using (SqlCommand cmd = new SqlCommand("delete from product.peripheral where peripheral_name = @AcsseorysName, conn"))
             {
                 //works
                 cmd.Parameters.AddWithValue("@AcsseorysName", AcsseorysName);
