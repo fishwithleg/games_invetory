@@ -197,6 +197,7 @@ namespace gamese.repo
                 cmd.Parameters.AddWithValue("@gamesname", gametemp.games_name);
                 cmd.Parameters.AddWithValue("@gamesregion", gametemp.games_region);
                 cmd.Parameters.AddWithValue("@gamesgenre", gametemp.games_genre);
+                //need to get the main product sql to modify the work
                 cmd.Parameters.AddWithValue("gamesfakeshare", gametemp.consoles_name);
                 return Convert.ToInt32(cmd.ExecuteScalar());
                 Console.ReadLine();
