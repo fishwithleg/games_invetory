@@ -95,7 +95,6 @@ namespace games.veiw
 
         public int Getintinput1()
         {
-            //problem here
             return int.Parse(Console.ReadLine());        
         }
 

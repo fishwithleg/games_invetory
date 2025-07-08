@@ -195,14 +195,13 @@ namespace games
             string consoleSupplier = view.getinput();
             int consoleId = 0;
             Game console1 = new Game(consoleId,consoleName,consoleSupplier);
-            //Game console2 = new Game(consoleId);
-            //int createId = storemanager.insertnewconsole(console2);
             int createId = storemanager.insertnewconsole(console1);
             view.displaymessage($"new console ineserted with ID: {consoleId}");
         }
 
         private static void deleteconsole()
         {
+            // use the name of the table to delete
             view.displaymessage("[enter the console name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table]\n[2.it cant be a id only the name of the console]\n------------------------------------------");
             string consoleName = view.getinput();
             int rowaffected = storemanager.deleteconsole(consoleName);
@@ -213,7 +212,7 @@ namespace games
         //game swtich
         public static void updategames()
         {
-            // uses the id of the console table
+            
             view.displaymessage("[enter the games id to update it]\n [how to use]\n---------------------------------\n[1.use the id of the game not the name]\n---------------------------------\n");
             int GamesId = view.Getintinput1();
             view.displaymessage("[enter new games name] ");
@@ -235,8 +234,6 @@ namespace games
             string ConsolesForGamesName = view.getinput();
             int GamesId = 0;
             GameConsole console2 = new GameConsole(GamesName, GamesId, GamesRegion,GamesGenre,ConsolesForGamesName);
-            //Game console2 = new Game(consoleId);
-            //int createId = storemanager.insertnewconsole(console2);
             int createId = storemanager.insertnewgames(console2);
             view.displaymessage($"new games ineserted with ID: {GamesId}");
         }
@@ -253,7 +250,7 @@ namespace games
         //Acsseorys swtich
         public static void updateacsseorys()
         {
-            // uses the id of the console table
+            
             view.displaymessage("[enter the acsseorys id to update it]\n [how to use] \n---------------------------------\n[1.use the id of the acsseorys not the name]\n---------------------------------\n");
             int AcsseorysId = view.Getintinput1();
             view.displaymessage("[enter new acsseorys name] ");
@@ -276,7 +273,7 @@ namespace games
             view.displaymessage($"new acsseorys ineserted with ID: {AcsseorysId}");
         }
 
-        //dosent work
+        
         private static void deleteacsseorys()
         {
             view.displaymessage("[enter the acsseorys name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table]\n[2.it cant be a id only the name of the acsseorys]\n------------------------------------------");
