@@ -135,7 +135,9 @@ namespace games
                                                 break;
                                             case "5":
                                                 Console.Clear();
-                                                choice2.Equals("5");
+                                                string choice4 = view.Displayreport();
+                                                switch (choice4)
+                                                { }
 
                                                 break;
                                         }

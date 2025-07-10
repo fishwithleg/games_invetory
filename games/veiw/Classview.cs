@@ -64,6 +64,16 @@ namespace games.veiw
         }
 
 
+        public string Displayreport()
+        {
+
+            Console.WriteLine("console report veiw");
+            Console.WriteLine("meun: ");
+            Console.WriteLine("1. view the report");
+
+            return Console.ReadLine();
+        }
+
 
         //console table
         public void displayconsole(List<Game> consoleRL)
