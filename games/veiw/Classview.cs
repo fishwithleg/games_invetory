@@ -48,20 +48,20 @@ namespace games.veiw
             return Console.ReadLine();
         }
 
-        public string DisplayAccsseorey()
-        {
+        //public string DisplayAccsseorey()
+        //{
            
-            Console.WriteLine("console Accsseorey inventory");
-            Console.WriteLine("meun: ");
-            Console.WriteLine("1. view all reconds in peripheral");
-            Console.WriteLine("2. update peripheral name");
-            Console.WriteLine("3. insert new peripheral");
-            Console.WriteLine("4. delete peripheral");
-            Console.WriteLine("5. back");
-            Console.WriteLine("select the opition");
+        //    Console.WriteLine("console Accsseorey inventory");
+        //    Console.WriteLine("meun: ");
+        //    Console.WriteLine("1. view all reconds in peripheral");
+        //    Console.WriteLine("2. update peripheral name");
+        //    Console.WriteLine("3. insert new peripheral");
+        //    Console.WriteLine("4. delete peripheral");
+        //    Console.WriteLine("5. back");
+        //    Console.WriteLine("select the opition");
 
-            return Console.ReadLine();
-        }
+        //    return Console.ReadLine();
+        //}
 
 
         public string Displayreport()
