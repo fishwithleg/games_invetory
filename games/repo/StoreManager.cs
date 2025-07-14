@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using games.something;
@@ -261,6 +263,21 @@ namespace gamese.repo
                 return cmd.ExecuteNonQuery();
 
             }
+        }
+
+        public SqlDataReader Runreport(String insql)
+        {
+            string sqlstrings = insql;
+            SqlDataReader reader;
+            using (SqlCommand cmd = new SqlCommand(sqlstrings, conn))
+
+            {
+
+               reader = cmd.ExecuteReader();
+            
+            }
+
+            return reader;
         }
 
         public void closeconncetion()

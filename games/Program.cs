@@ -3,6 +3,7 @@ using games.something;
 using games.veiw;
 using Microsoft.Identity.Client;
 using System;
+using Microsoft.Data.SqlClient;
 
 namespace games
 {
@@ -136,6 +137,16 @@ namespace games
                                             case "5":
                                                 Console.Clear();
                                                 string choice4 = view.Displayreport();
+                                                SqlDataReader reader = storemanager.Runreport("select * from product.games");
+                                                while (reader.Read())
+                                                {
+                                                    Console.WriteLine(reader["games_id"]);
+                                                    Console.WriteLine(reader["games_name"]);
+                                                    Console.WriteLine(reader["games_region"]);
+                                                    Console.WriteLine(reader["games_genre"]);
+                                                    Console.WriteLine(reader["consoles_name"]);
+                                                  
+                                                }
                                                 switch (choice4)
                                                 { }
 
