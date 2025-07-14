@@ -137,15 +137,24 @@ namespace games
                                             case "5":
                                                 Console.Clear();
                                                 string choice4 = view.Displayreport();
-                                                SqlDataReader reader = storemanager.Runreport("select * from product.games");
+                                                SqlDataReader reader = storemanager.Runreport("select * from product.games,product.console,product.peripheral");
                                                 while (reader.Read())
                                                 {
+                                                    
+                                                 
                                                     Console.WriteLine(reader["games_id"]);
                                                     Console.WriteLine(reader["games_name"]);
                                                     Console.WriteLine(reader["games_region"]);
                                                     Console.WriteLine(reader["games_genre"]);
                                                     Console.WriteLine(reader["consoles_name"]);
-                                                  
+
+                                                    Console.WriteLine(reader["console_id"]);
+                                                    Console.WriteLine(reader["console_name"]);
+                                                    Console.WriteLine(reader["console_supplier"]);
+
+                                                    Console.WriteLine(reader["peripheral_id"]);
+                                                    Console.WriteLine(reader["peripheral_name"]);
+                                                    Console.WriteLine(reader["peripheral_supplier"]);
                                                 }
                                                 switch (choice4)
                                                 { }
