@@ -145,7 +145,8 @@ namespace games
                                                             while (reader.Read())
                                                             {
 
-
+                                                                Console.WriteLine("[reports done]");
+                                                                Console.WriteLine("----------------------");
                                                                 Console.WriteLine(reader["games_id"]);
                                                                 Console.WriteLine(reader["games_name"]);
                                                                 Console.WriteLine(reader["games_region"]);
