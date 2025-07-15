@@ -280,6 +280,8 @@ namespace gamese.repo
             return reader;
         }
 
+
+
         public void closeconncetion()
         {
             if (conn != null && conn.State == ConnectionState.Open)
