@@ -144,7 +144,7 @@ namespace games
                                                             SqlDataReader reader = storemanager.Runreport("select * from product.games,product.console,product.peripheral");
                                                             while (reader.Read())
                                                             {
-
+                                                                Console.WriteLine("----------------------");
                                                                 Console.WriteLine("[reports done]");
                                                                 Console.WriteLine("----------------------");
                                                                 Console.WriteLine(reader["games_id"]);
@@ -160,11 +160,14 @@ namespace games
                                                                 Console.WriteLine(reader["peripheral_id"]);
                                                                 Console.WriteLine(reader["peripheral_name"]);
                                                                 Console.WriteLine(reader["peripheral_supplier"]);
+                                                                Console.WriteLine("----------------------");
+                                                                break;
                                                             }
+                                                            
                                                         }
 
 
-                                                        break;
+                                                 break;
                                                 }
 
                                                
@@ -174,7 +177,7 @@ namespace games
                                         
                                       
                                     }
-                                    break;
+                             break;
                             }
 
                         }
