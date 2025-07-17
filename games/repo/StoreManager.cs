@@ -69,8 +69,8 @@ namespace gamese.repo
                     while (reader.Read())
                     {
                         int consoleId = Convert.ToInt32(reader["console_id"]);
-                        string consoleName = reader["console_name"].ToString();
-                        string consoleSupplier = "console_suppiler".ToString();
+                        string consoleName = reader ["console_name"].ToString();
+                        string consoleSupplier = reader ["console_supplier"].ToString();
                         consoleRL.Add(new Game(consoleId, consoleName, consoleSupplier));
                     }
                 }
@@ -96,9 +96,9 @@ namespace gamese.repo
                     {
                         int GamesId = Convert.ToInt32(reader["games_id"]);
                         string GamesName = reader["games_name"].ToString();
-                        string GamesRegion = "games_region".ToString();
-                        string GamesGenre = "games_genre".ToString();
-                        string ConsolesForGamesName = "consoles_name".ToString();
+                        string GamesRegion = reader ["games_region"].ToString();
+                        string GamesGenre = reader["games_genre"].ToString();
+                        string ConsolesForGamesName = reader["consoles_name"].ToString();
                         GameIL.Add(new GameConsole(GamesName, GamesId, GamesRegion, GamesGenre, ConsolesForGamesName));
                     }
                 }
@@ -125,7 +125,7 @@ namespace gamese.repo
                     {
                         int AcsseorysId = Convert.ToInt32(reader["peripheral_id"]);
                         string AcsseorysName = reader["peripheral_name"].ToString();
-                        string AcsseorysSupplier = "AcsseorysSupplier".ToString();
+                        string AcsseorysSupplier = reader["peripheral_supplier"].ToString();
                         AcsseorysLL.Add(new Acsseorys(AcsseorysName, AcsseorysId, AcsseorysSupplier));
                     }
                 }

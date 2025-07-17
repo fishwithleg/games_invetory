@@ -33,13 +33,13 @@ namespace games
                 case "1":
                     {
                             Console.WriteLine("[heres the list]");
-                            Console.WriteLine("--------------");
-                        List<Game> consoleRL = storemanager.GetEveryconsole();
+                            Console.WriteLine("------------------------------------------");
+                            List<Game> consoleRL = storemanager.GetEveryconsole();
                         view.displayconsole(consoleRL);
-                            Console.WriteLine("--------------");
-                        
+                            Console.WriteLine("------------------------------------------");
 
-                    }
+
+                        }
 
                     break;
                 case "4":
@@ -73,10 +73,10 @@ namespace games
                                     {
                                         Console.Clear();
                                         Console.WriteLine("[heres the list]");
-                                        Console.WriteLine("--------------");
+                                        Console.WriteLine("---------------------------------------------------------------------------------------------------");
                                         List<GameConsole> GameIL = storemanager.GetEveryGame();
                                         view.displaygames(GameIL);
-                                        Console.WriteLine("--------------");
+                                        Console.WriteLine("---------------------------------------------------------------------------------------------------");
 
                                     }
 
@@ -111,11 +111,11 @@ namespace games
                                                 {
                                                     Console.Clear();
                                                     Console.WriteLine("[heres the list]");
-                                                    Console.WriteLine("--------------");
+                                                    Console.WriteLine("------------------------------------------");
                                                     List<Acsseorys> AcsseorysLL = storemanager.GetEveryAcsseorys();
                                                     view.DisplayAccsseorey(AcsseorysLL);
-                                                    Console.WriteLine("--------------");
-                                                   
+                                                    Console.WriteLine("------------------------------------------");
+
 
 
                                                 }

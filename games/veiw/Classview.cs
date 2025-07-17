@@ -80,8 +80,9 @@ namespace games.veiw
         {
             foreach (Game consoleR in consoleRL)
             {
-                Console.WriteLine($"{consoleR.console_id},{consoleR.console_name}");
-
+                Console.WriteLine("------------------------------------------");
+                Console.WriteLine($"[{consoleR.console_id}] [{consoleR.console_name},{consoleR.console_supplier}]");
+                Console.WriteLine("------------------------------------------");
             }
 
 
@@ -118,8 +119,9 @@ namespace games.veiw
         {
             foreach (GameConsole gameI in GameIL)
             {
-                Console.WriteLine($"{gameI.games_id},{gameI.games_name}");
-
+                Console.WriteLine("---------------------------------------------------------------------------------------------------");
+                Console.WriteLine($"[{gameI.games_id}] [{gameI.games_name},{gameI.games_region},{gameI.games_genre},{gameI.consoles_name}]");
+                Console.WriteLine("---------------------------------------------------------------------------------------------------");
             }
 
 
@@ -130,8 +132,9 @@ namespace games.veiw
         {
             foreach (Acsseorys AcsseorysL in AcsseorysLL)
             {
-                Console.WriteLine($"{AcsseorysL.peripheral_id},{AcsseorysL.peripheral_name}");
-
+                Console.WriteLine("------------------------------------------");
+                Console.WriteLine($"[{AcsseorysL.peripheral_id}] [{AcsseorysL.peripheral_name},{AcsseorysL.peripheral_supplier}] ");
+                Console.WriteLine("------------------------------------------");
             }
 
 
