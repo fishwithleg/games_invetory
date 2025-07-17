@@ -109,7 +109,7 @@ namespace gamese.repo
         }
 
 
-        //connects to acsseorys
+        //connects to peripheral
 
         public List<Acsseorys> GetEveryAcsseorys()
         {
