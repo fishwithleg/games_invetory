@@ -16,15 +16,18 @@ namespace games.veiw
         public string displaymenu()
         {
             
-            Console.WriteLine("welcome to console inventory");
+            Console.WriteLine("[welcome to console inventory]" +
+                              "\n------------------------------");
             Console.WriteLine("meun: ");
-            Console.WriteLine("1. view all reconds in console");
-            Console.WriteLine("2. update consoles name");
-            Console.WriteLine("3. insert new console");
-            Console.WriteLine("4. delete console");
-            Console.WriteLine("5. next");
-            Console.WriteLine("6. clear current opration");
-            Console.WriteLine("select the opition");
+            Console.WriteLine("1. [view all reconds in console]");
+            Console.WriteLine("2. [update consoles name]");
+            Console.WriteLine("3. [insert new console]");
+            Console.WriteLine("4. [delete console]");
+            Console.WriteLine("5. [next]");
+            Console.WriteLine("6. [clear current opration]" +
+                              "\n------------------------------");
+            Console.WriteLine("[select the opition]" +
+                              "\n------------------------------");
 
             return Console.ReadLine();
             
@@ -35,15 +38,18 @@ namespace games.veiw
         public string DisplayGameMenu()
         {
             
-            Console.WriteLine("games inventory");
+            Console.WriteLine("[games inventory]" +
+                              "\n--------------------------------");
             Console.WriteLine("meun: ");
-                Console.WriteLine("1. view all reconds in games");
-                Console.WriteLine("2. update games name");
-                Console.WriteLine("3. insert new games");
-                Console.WriteLine("4. delete games");
-                Console.WriteLine("5. next");
-                Console.WriteLine("6. back");
-            Console.WriteLine("select the opition");
+                Console.WriteLine("1. [view all reconds in games]");
+                Console.WriteLine("2. [update games name]");
+                Console.WriteLine("3. [insert new games]");
+                Console.WriteLine("4. [delete games]");
+                Console.WriteLine("5. [next]");
+                Console.WriteLine("6. [back]" +
+                                  "\n----------------------------");
+                Console.WriteLine("[select the opition]" +
+                                  "\n----------------------------");
 
             return Console.ReadLine();
         }
@@ -51,14 +57,17 @@ namespace games.veiw
         public string DisplayAccsseorey()
         {
 
-            Console.WriteLine("console Accsseorey inventory");
+            Console.WriteLine("[console Accsseorey inventory]" +
+                              "\n----------------------------");
             Console.WriteLine("meun: ");
-            Console.WriteLine("1. view all reconds in peripheral");
-            Console.WriteLine("2. update peripheral name");
-            Console.WriteLine("3. insert new peripheral");
-            Console.WriteLine("4. delete peripheral");
-            Console.WriteLine("5. back");
-            Console.WriteLine("select the opition");
+            Console.WriteLine("1. [view all reconds in peripheral]");
+            Console.WriteLine("2. [update peripheral name]");
+            Console.WriteLine("3. [insert new peripheral]");
+            Console.WriteLine("4. [delete peripheral]");
+            Console.WriteLine("5. [back]" +
+                              "\n----------------------------");
+            Console.WriteLine("[select the opition]" +
+                              "\n----------------------------");
 
             return Console.ReadLine();
         }
@@ -67,9 +76,11 @@ namespace games.veiw
         public string Displayreport()
         {
 
-            Console.WriteLine("console report veiw");
+            Console.WriteLine("[console report veiw]" +
+                              "\n-------------------");
             Console.WriteLine("meun: ");
-            Console.WriteLine("1. view the report");
+            Console.WriteLine("[1. view the report]" +
+                              "\n-------------------");
 
             return Console.ReadLine();
         }
