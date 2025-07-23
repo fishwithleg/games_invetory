@@ -15,52 +15,53 @@ namespace games
         static void Main(string[] args)
         {
             Console.WriteLine(".........");
-            string connectionstring = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=console;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-
-            storemanager = new StoreManager(connectionstring);
+            //string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=console;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string mdfPath = Path.Combine(AppContext.BaseDirectory, "console.mdf");
+            string connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={mdfPath};Integrated Security=True;Connect Timeout=30;";
+            storemanager = new StoreManager(connectionString);
             view = new Classview();
-            string choice; 
+            string choice;
             do
-            { 
-              choice = view.displaymenu();
+            {
+                choice = view.displaymenu();
                 Console.Clear();
 
 
 
 
                 switch (choice)
-            {
-                case "1":
-                    {
+                {
+                    case "1":
+                        {
                             Console.WriteLine("[heres the list]");
                             Console.WriteLine("------------------------------------------");
                             List<Game> consoleRL = storemanager.GetEveryconsole();
-                        view.displayconsole(consoleRL);
+                            view.displayconsole(consoleRL);
                             Console.WriteLine("------------------------------------------");
 
 
                         }
 
-                    break;
-                case "4":
-                    deleteconsole();
-                   
+                        break;
+                    case "4":
+                        deleteconsole();
 
-                    break;
-                case "3":
+
+                        break;
+                    case "3":
                         insertnewconsole();
 
                         break;
-                case "2":
-                    updateconsole();
+                    case "2":
+                        updateconsole();
 
                         break;
                     case "6":
                         view.displaymenu();
 
-                   break;   
-                case "5":
-                        
+                        break;
+                    case "5":
+
                         Console.Clear();
                         {
                             string choice2;
@@ -94,9 +95,9 @@ namespace games
                                     updategames();
 
                                     break;
-                                    case "6":
+                                case "6":
                                     Console.Clear();
-                                    
+
 
 
                                     break;
@@ -163,51 +164,51 @@ namespace games
                                                                 Console.WriteLine("----------------------");
                                                                 break;
                                                             }
-                                                            
+
                                                         }
 
 
-                                                 break;
+                                                        break;
                                                 }
 
-                                               
 
-                                         break;
+
+                                                break;
                                         }
-                                        
-                                      
+
+
                                     }
-                             break;
+                                    break;
                             }
 
                         }
-                    
-                    
 
 
-                    break;
-                case "loop":
-                        
+
+
+                        break;
+                    case "loop":
+
                         //exit = true;
                         storemanager.closeconncetion();
-                        
+
                         break;
 
 
-                    
-                default:
-                    Console.WriteLine("invalid choice please try again");
-                    break;
-   
 
-             }
+                    default:
+                        Console.WriteLine("invalid choice please try again");
+                        break;
+
+
+                }
             } while (!choice.Equals("loop")); Console.Clear();
 
 
         }
 
 
-        
+
         // console swtich
         public static void updateconsole()
         {
@@ -216,8 +217,8 @@ namespace games
             view.displaymessage("[enter new console id] ");
             int consoleId = view.Getintinput1();
             view.displaymessage("[enter new console name] ");
-            string consoleName = view.getinput(); 
-            int rowaffected = storemanager.updateconsole(consoleId,consoleName);
+            string consoleName = view.getinput();
+            int rowaffected = storemanager.updateconsole(consoleId, consoleName);
             view.displaymessage($"rows affected");
         }
 
@@ -229,7 +230,7 @@ namespace games
             view.displaymessage("please enter a new suppiler");
             string consoleSupplier = view.getinput();
             int consoleId = 0;
-            Game console1 = new Game(consoleId,consoleName,consoleSupplier);
+            Game console1 = new Game(consoleId, consoleName, consoleSupplier);
             int createId = storemanager.insertnewconsole(console1);
             view.displaymessage($"new console ineserted with ID: {consoleId}");
         }
@@ -247,7 +248,7 @@ namespace games
         //game swtich
         public static void updategames()
         {
-            
+
             view.displaymessage("[enter the games id to update it]\n [how to use]\n---------------------------------\n[1.use the id of the game not the name]\n---------------------------------\n");
             int GamesId = view.Getintinput1();
             view.displaymessage("[enter new games name] ");
@@ -268,7 +269,7 @@ namespace games
             view.displaymessage("[what games is compabiltable with what console]");
             string ConsolesForGamesName = view.getinput();
             int GamesId = 0;
-            GameConsole console2 = new GameConsole(GamesName, GamesId, GamesRegion,GamesGenre,ConsolesForGamesName);
+            GameConsole console2 = new GameConsole(GamesName, GamesId, GamesRegion, GamesGenre, ConsolesForGamesName);
             int createId = storemanager.insertnewgames(console2);
             view.displaymessage($"new games ineserted with ID: {GamesId}");
         }
@@ -285,7 +286,7 @@ namespace games
         //Acsseorys swtich
         public static void updateacsseorys()
         {
-            
+
             view.displaymessage("[enter the acsseorys id to update it]\n [how to use] \n---------------------------------\n[1.use the id of the acsseorys not the name]\n---------------------------------\n");
             int AcsseorysId = view.Getintinput1();
             view.displaymessage("[enter new acsseorys name] ");
@@ -308,7 +309,7 @@ namespace games
             view.displaymessage($"new acsseorys ineserted with ID: {AcsseorysId}");
         }
 
-        
+
         private static void deleteacsseorys()
         {
             view.displaymessage("[enter the acsseorys name to delete]\n [how to use]\n-----------------------------------------\n[1.be sure its in the table]\n[2.it cant be a id only the name of the acsseorys]\n------------------------------------------");
@@ -317,14 +318,15 @@ namespace games
         }
 
 
+       
+
 
     }
 
-    
- }
+
+}
 
 
-        
 
 
 //List<gamese> consoleTR = storeragmanger.GetBrands();
